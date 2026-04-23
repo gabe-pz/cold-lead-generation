@@ -81,7 +81,7 @@ def main() -> None:
     result = clean(f'step-1/raw-csvs/{csv_name}.csv')
 
     #write the master file once at the end
-    result.to_csv(f'step-2/filtered-csvs/{csv_name}-cleanedcsv', index=False)
+    result.to_csv(f'step-2/cleaned-csvs/{csv_name}-cleanedcsv', index=False)
     print(f'total        -> {len(result):4d} rows written')
 
 if __name__ == '__main__':
