@@ -1,7 +1,5 @@
 import pandas as pd
 
-
-
 BUSINESS_CODES = {
     'lawn':        ['C27', 'D49'],
     'general':     ['A', 'B'],
@@ -77,11 +75,12 @@ def clean(input_csv):
     return pd.concat(pieces, ignore_index=True)
 
 def main() -> None:
-    csv_name = input("Enter the name of your csv: ")
+    csv_name = input('Enter the name of your csv: ')
+
     #One call does all six trades and hands back a single combined DataFrame.
     result = clean(f'step-1/raw-csvs/{csv_name}.csv')
 
-    # rite the master file once at the end
+    #write the master file once at the end
     result.to_csv(f'step-2/filtered-csvs/{csv_name}-cleanedcsv', index=False)
     print(f'total        -> {len(result):4d} rows written')
 
